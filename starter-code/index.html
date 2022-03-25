@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Tic Tac Toe</title>
+</head>
+
+<body class="body-container">
+
+  <!-- New game menu start -->
+  <div class="main-container">
+
+    <header class="main-container__header">
+      <img src="./assets/logo.svg" />
+    </header>
+
+    <div class="grid-container"></div>
+    <div class="control-panel">
+      <header>
+        PICK PLAYER 1'S MARK
+      </header>
+
+      <div class="change-player">
+        <div class="player-container">
+          <img class="x" src="./assets/icon-x.svg">
+        </div>
+        <div class="player-container active">
+          <img class="o" src="./assets/icon-o.svg">
+        </div>
+
+      </div>
+
+      <footer>
+        REMEMBER: X GOES FIRST
+      </footer>
+    </div>
+
+    <div class="buttons-container">
+      <button class="button cpu-button yellow" type="button">NEW GAME(VS CPU)</button>
+      <button class="button player-button blue" type="button">NEW GAME(VS PLAYER)</button>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
