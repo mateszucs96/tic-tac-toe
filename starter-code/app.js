@@ -18,16 +18,19 @@ class Player {
     placeMarks(e) {
         console.log(primaryMark)
         if (e.target.children.length === 0) {
-            newGame.handleTurns();
+
             console.log(e.target.children)
             const playerMark = document.createElement('img');
             playerMark.classList.add('marks');
             playerMark.classList.add('player-mark');
-            playerMark.src = primaryMark;
-            e.target.appendChild(playerMark);
-
+            players.forEach(player => {
+                if (player.canMove) {
+                    playerMark.src = player.mark
+                    e.target.appendChild(playerMark);
+                }
+            })
+            newGame.handleTurns();
         }
-
     }
 }
 
@@ -87,20 +90,17 @@ class Game {
         grid = document.querySelectorAll('.grid')
     }
     init() {
-        players = [player1 = new Player(primaryMark, true), player2 = new Player(secondaryMark, false)]
         this.loadBoard();
+        players = [player1 = new Player(primaryMark, primaryMark === './assets/icon-x.svg' ? true : false), player2 = new Player(secondaryMark, secondaryMark === './assets/icon-x.svg' ? true : false)]
 
-        console.log(players)
+
+
     }
 
-    // handleTurns() {
-    //     const firstToMove = player1.mark === './assets/icon-x.svg' ? player1 : player2;
-    //     console.log(player1)
-    //     console.log(player2)
-    //     players.forEach(player => player.canMove ? player.canMove = false : player.canMove = true)
-    //     console.log(player1)
-    //     console.log(player2)
-    // }
+    handleTurns() {
+        players.forEach(player => player.canMove ? player.canMove = false : player.canMove = true)
+        console.log(players)
+    }
 }
 
 const newGame = new Game();
