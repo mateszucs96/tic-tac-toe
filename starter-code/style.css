@@ -117,4 +117,9 @@ body {
 .grid {    
     background-color: var(--clr-semi-dark);
     border-radius: 15px;
+    display: flex;
+}
+
+.marks {
+    margin: auto auto;
 }
